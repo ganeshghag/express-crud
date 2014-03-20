@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+	<form method='post' action='/person'>
+		<input type="submit" value="Create Person">
+	</form>
+  
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+	<table width='100%' border='1'>	
+	<% var cnt = 0;
+	persons.forEach(function(person){ %>
+	<tr>
+	<td><%=cnt++%></td>
+	<td><a href='/details/<%=person.id%>'><%=person.id%></a></td>
+	<td><%=person.firstName%></td>
+	<td><%=person.lastName%></td>
+	<td><%=person.address%></td>
+	<td><%=person.email%></td>
+	<td><%=person.info%></td>
+	<td><%=person.imageUrl%></td>
+	</tr>
+	<% }) %>
+	
+	</table>
+  </body>
+</html>
